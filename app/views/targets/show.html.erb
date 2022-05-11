@@ -1,2 +1,35 @@
-<h1>Targets#show</h1>
-<p>Find me in app/views/targets/show.html.erb</p>
+<h1>目標の詳細</h1>
+<div class = "container">
+  <div class = "row">
+    <div class = "col-4">
+      <%= render "users/info", user: @target.user %>
+    </div>
+    <div class = "col-8">
+      <div>
+        <h5>自分の目標は『<strong><%= "#{@target.title}" %></strong>』です</h5>
+        <div>
+          <p><%= @target.description %></p>
+          <% if @target.user == current_user %>
+            <p>
+              <%= link_to edit_target_path(@target) do %>
+                <button type = "button" class = "btn btn-warning btn-sm">編集</button>
+              <% end %>
+            </p>
+          <% end %>
+          <p><%= @target.created_at.strftime("%Y年%m月%d日") %></p>
+          <div class = "favorite-btn">
+            <%= render "favorites/btn", target: @target %>
+          </div>
+        </div>
+      </div>
+      <div class = "target-comment-index">
+        <%= render "target_comments/comment_index", target: @target %>
+      </div>
+      <div>
+        <div>
+          <%= render "target_comments/comment_form", target: @target, comment: @comment %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

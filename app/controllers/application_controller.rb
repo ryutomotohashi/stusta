@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   # サインイン後遷移画面
   def after_sign_in_path(resource)
-    root_path
+    user_path(current_user.id)
   end
 
   #サインアウト後遷移画面

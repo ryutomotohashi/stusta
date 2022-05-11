@@ -1,0 +1,7 @@
+<% targets.each do |target| %>
+  <%= target.title %>
+  <%= target.description %>
+  <%= link_to target_path(target) do %>
+    <button type = "button" class = "btn btn-warning btn-sm">詳細</button>
+  <% end %>
+<% end %>

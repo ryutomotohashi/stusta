@@ -1,0 +1,11 @@
+<% if target.favorited_by?(current_user) %>
+  <%= link_to target_favorites_path(target), method: :delete, remote: true do %>
+    <i class="fas fa-heart"></i>︎
+    <%= target.favorites.count %> いいね
+  <% end %>
+<% else %>
+  <%= link_to target_favorites_path(target), method: :post, remote: true do %>
+    <i class="far fa-heart"></i>
+    <%= target.favorites.count %> いいね
+  <% end %>
+<% end %>

@@ -1,3 +1,89 @@
-<div class = "container">
-  <
+<!----- main visual section ------>
+<div class = "container-fluid main-visual">
+  <div class = "row text-center ">
+    <h1 class = "display-1 text-bold mb-4">Study,Start</h1>
+    <h3 class = "mb-3 lh-1">学びを、始めよう</h3>
+    <p class = "">
+      自分が集中できる音を聞く。<br />
+      自分の目標に打ち込む。
+      そして、周りに共有する。
+    </p>
+  </div>
+</div>
+
+<!----- main section ----->
+<div class = "container mt-1 pt-1">
+  <h1 class = "text-center">About</h1>
+  <hr />
+
+  <!------  about 音を聴く  ------>
+
+  <div class = "row d-flex justify-content-center">
+    <div class = "col-md-5">
+      <%= image_tag "listning.png", class: "img-fluid"%>
+    </div>
+    <div class = "col-md-5 text-center pt-5">
+
+      <h1 class = "mb-3">音を聴く。</h1>
+
+      <p class = "text-secondary lh-lg">
+        自分が集中できる音を聞きながら、決まった時間勉強。<br />
+        時間は15分・30分・60分から選べます。<br />
+        自然音、雑音、生活音など<br />
+        色々な音の中から、お好みの音を見つけて<br />
+        自分が聴き心地の良い音を選びましょう。<br />
+
+        おすすめはカフェの音です
+      </p>
+    </div>
+  </div>
+  <hr />
+    <!------  about 勉強する  ------>
+  <div class = "row d-flex justify-content-center mb-3 pb-2">
+    <div class = "col-md-5">
+      <%= image_tag "studying.png", class: "img-fluid"%>
+    </div>
+    <div class = "col-md-5 text-center pt-5">
+
+      <h1 class = "mb-3">勉強する。</h1>
+
+      <p class = "text-secondary lh-lg">
+        集中できる音が見つかったら<br />
+        勉強に取り掛かってみましょう。<br />
+        雑音は、人間の集中力を高めてくれます。<br />
+        あなたがなりたい自分になる為に<br />
+        その目標に打ち込んでみましょう<br />
+      </p>
+    </div>
+    <hr />
+    <!------  about 共有する  ------>
+    <div class = "row d-flex justify-content-center">
+    <div class = "col-md-5">
+      <%= image_tag "together.png", class: "img-fluid"%>
+    </div>
+    <div class = "col-md-5 text-center pt-5">
+
+      <h1 class = "mb-3">共有する。</h1>
+
+      <p class = "text-secondary lh-lg">
+        一緒の目標を持つ仲間を見つけてみましょう。<br />
+        それは、あなたが持つ不安を<br />
+        解決に導くヒントになるかもしれません<br />
+        気になったら、フォローしたり、<br />
+        コメントしたりして<br />
+        親交を深めていきましょう。
+      </p>
+    </div>
+
+    <% if user_signed_in? %>
+      <button type = "button" class = "btn btn-lg btn-secondary">
+        <%= link_to "投稿してみる", new_target_path, class: "text-light"%>
+      </button>
+    <% else %>
+      <button type = "button" class = "btn btn-lg btn-secondary">
+        <%= link_to "始めてみる", new_user_registration_path, class: "text-light"%>
+      </button>
+    <% end %>
+
+  </div>
 </div>

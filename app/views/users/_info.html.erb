@@ -1,0 +1,51 @@
+<div class="py-5 text-center">
+  <h1 class="display-5 fw-bold">User's Profile</h1>
+
+  <!------- user profile ------->
+
+  <!------- user icon ------->
+  <%= image_tag user.get_icon, size: "200x200", class: "mt-3 rounded-circle d-block mx-auto mb-4" %>
+
+  <!------- user name ------->
+  <h1 class = "fs-2">name: <%= user.name %></h1>
+
+  <!------- user introduction ------->
+  <div class="col-lg-6 mx-auto">
+    <p class = "mb-1">自己紹介</p>
+    <p class="lead mb-4">
+      これからよろしくお願いいたします。
+    </p>
+
+  <div class = "d-grid gap-2 d-sm-flex justify-content-sm-center">
+  <!------- user follower count ------->
+    <div class ="followings-content mx-2">
+      <p>フォロー数</p>
+      <%= link_to user_followings_path(user) do %>
+        <%= user.followings.count %>
+      <% end %>
+    </div>
+  <!------- user following count ------->
+    <div class ="followrs-content mx-2">
+      <p>フォロワー数</p>
+        <%= link_to user_followers_path(user) do %>
+          <%= user.followers.count %>
+        <% end %>
+    </div>
+  </div>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-2">
+      <% if current_user != user  %>
+        <%= render "relationships/btn", user: user %>
+        <%= link_to user_path(user) do %>
+          <button type = "button" class = "btn btn-light">この人の目標一覧を見る</button>
+        <% end %>
+      <% else %>
+        <%= link_to edit_user_path(user) do %>
+          <button type = "button" class = "btn btn-secondary btn-lg">編集</button>
+        <% end %>
+        <%= link_to new_target_path do %>
+          <button type = "button" class = "btn btn-warning btn-lg">投稿</button>
+        <% end %>
+      <% end %>
+    </div>
+    </div>
+  </div>

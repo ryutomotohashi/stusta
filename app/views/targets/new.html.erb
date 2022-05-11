@@ -1,2 +1,24 @@
-<h1>Targets#new</h1>
-<p>Find me in app/views/targets/new.html.erb</p>
+<div class = "container py-5">
+  <%= render "layouts/error", obj: @target %>
+  <div class = "row d-flex justify-content-center">
+    <div class = "col-5">
+      <h3>あなたの目標は?</h3>
+        <%= form_with model: @target, local: true do |f| %>
+          <div class = "mb-3">
+            <%= f.label :title, "目標の題名", class: "form-label" %><br />
+            <%= f.text_field :title, placeholder: "目標を20文字以内で入力してください",class: "form-control"%>
+          </div>
+          <div class = "mb-3">
+            <%= f.label :description, "目標の詳細説明や質問", class: "form-label"%><br />
+            <%= f.text_area :description,  placeholder: "詳細な説明や質問を150文字以内で入力してください",class: "form-control" %>
+          </div>
+          <div class = "mb-3">
+            <%= f.submit "目標を登録する" , class: "btn btn-warning"%>
+            <%= link_to :back do %>
+              <button type = "button" class = "btn btn-secondary ">戻る</button>
+            <% end %>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>
