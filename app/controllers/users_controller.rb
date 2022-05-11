@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def index
+    @users = User.all
+  end
+
   def show
     @user = User.find(params[:id])
     @targets = Target.where(user_id: @user)
@@ -21,6 +25,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name,:image, :introduction)
+    params.require(:user).permit(:name,:profile_image, :introduction)
   end
 end

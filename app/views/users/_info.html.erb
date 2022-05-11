@@ -1,5 +1,5 @@
-<div class="py-5 text-center">
-  <h1 class="display-5 fw-bold">User's Profile</h1>
+<div class="py-5 mx-1 text-center">
+  <h2 class="display-5 fw-bold">User's Profile</h2>
 
   <!------- user profile ------->
 
@@ -36,7 +36,7 @@
       <% if current_user != user  %>
         <%= render "relationships/btn", user: user %>
         <%= link_to user_path(user) do %>
-          <button type = "button" class = "btn btn-light">この人の目標一覧を見る</button>
+          <button type = "button" class = "btn btn-light">UserPage</button>
         <% end %>
       <% else %>
         <%= link_to edit_user_path(user) do %>

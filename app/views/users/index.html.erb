@@ -1,0 +1,20 @@
+<div class="my-3 p-3 bg-body rounded shadow-sm">
+  <h2 class="border-bottom pb-2 mb-0 text-center">Users List</h2>
+
+  <!----- user投稿内容一覧表示 ----->
+
+  <% @users.each do |user| %>
+    <div class="d-flex pt-3">
+      <%= image_tag user.get_icon, size: "80x80", class: "bd-placeholder-img flex-shrink-0 me-2 rounded" %>
+      <div class = "row">
+        <h4 class = ""><%= user.name %></h4>
+        <p><%= user.introduction %></p>
+
+        <%= link_to user_path(user) do %>
+          <button type = "button" class = "btn btn-warning btn-sm">User Page</button>
+        <% end %>
+      </div>
+    </div>
+    <hr />
+  <% end %>
+</div>

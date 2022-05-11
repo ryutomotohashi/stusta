@@ -1,7 +1,26 @@
-<% targets.each do |target| %>
-  <%= target.title %>
-  <%= target.description %>
-  <%= link_to target_path(target) do %>
-    <button type = "button" class = "btn btn-warning btn-sm">詳細</button>
+<div class="my-3 p-3 bg-body rounded shadow-sm">
+  <h2 class="border-bottom pb-2 mb-0 text-center">Posts List</h2>
+
+  <!----- user投稿内容一覧表示 ----->
+
+  <% targets.each do |target| %>
+    <div class="d-flex pt-3">
+      <%= image_tag target.user.get_icon, size: "80x80", class: "bd-placeholder-img flex-shrink-0 me-2 rounded" %>
+      <div class = "row">
+        <h4 class = ""><%= target.title %></h4>
+        <p><%= target.description %></p>
+
+        <%= target.created_at.strftime("%Y年%m月%d日 %H時%M分") %>
+
+        コメント<%= target.target_comments.count %>件
+
+        <%= render "favorites/btn", target: target %>
+
+        <%= link_to target_path(target) do %>
+          <button type = "button" class = "btn btn-warning btn-sm">詳細</button>
+        <% end %>
+      </div>
+    </div>
+    <hr />
   <% end %>
-<% end %>
+</div>

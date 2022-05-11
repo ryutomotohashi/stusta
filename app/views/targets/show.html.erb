@@ -1,35 +1,32 @@
-<h1>目標の詳細</h1>
-<div class = "container">
-  <div class = "row">
-    <div class = "col-4">
-      <%= render "users/info", user: @target.user %>
-    </div>
-    <div class = "col-8">
-      <div>
-        <h5>自分の目標は『<strong><%= "#{@target.title}" %></strong>』です</h5>
-        <div>
-          <p><%= @target.description %></p>
-          <% if @target.user == current_user %>
-            <p>
-              <%= link_to edit_target_path(@target) do %>
-                <button type = "button" class = "btn btn-warning btn-sm">編集</button>
-              <% end %>
-            </p>
-          <% end %>
-          <p><%= @target.created_at.strftime("%Y年%m月%d日") %></p>
-          <div class = "favorite-btn">
-            <%= render "favorites/btn", target: @target %>
-          </div>
-        </div>
-      </div>
-      <div class = "target-comment-index">
-        <%= render "target_comments/comment_index", target: @target %>
-      </div>
-      <div>
-        <div>
-          <%= render "target_comments/comment_form", target: @target, comment: @comment %>
-        </div>
-      </div>
+<%= render "users/info", user: @target.user %>
+<div class="my-3 mx-1 p-3 bg-body rounded shadow-sm">
+  <div class="d-flex pt-3">
+    <%= image_tag @target.user.get_icon, size: "80x80", class: "bd-placeholder-img flex-shrink-0 me-2 rounded" %>
+    <div class = "row">
+      <h4 class = ""><%= @target.title %></h4>
+      <p><%= @target.description %></p>
+
+      <%= @target.created_at.strftime("%Y年%m月%d日 %H時%M分") %>
+
+      コメント<%= @target.target_comments.count %>件
+
     </div>
   </div>
+    <% if @target.user == current_user %>
+      <p>
+        <%= link_to edit_target_path(@target) do %>
+          <button type = "button" class = "btn btn-warning btn-sm">編集</button>
+        <% end %>
+      </p>
+    <% end %>
+    <p><%= @target.created_at.strftime("%Y年%m月%d日") %></p>
+    <div class = "favorite-btn">
+      <%= render "favorites/btn", target: @target %>
+    </div>
+    <div class = "target-comment-index">
+      <%= render "target_comments/comment_index", target: @target %>
+    </div>
+    <div>
+      <%= render "target_comments/comment_form", target: @target, comment: @comment %>
+    </div>
 </div>
