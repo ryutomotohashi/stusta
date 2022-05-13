@@ -5,7 +5,7 @@ class TargetCommentsController < ApplicationController
   def create
     @comment = TargetComment.new(target_comment_paraams)
     @comment.user_id = current_user.id
-    @comment.target_id = target.id
+    @comment.target_id = @target.id
     @comment.save
   end
 

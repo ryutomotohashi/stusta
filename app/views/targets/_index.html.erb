@@ -17,7 +17,13 @@
         <%= render "favorites/btn", target: target %>
 
         <%= link_to target_path(target) do %>
-          <button type = "button" class = "btn btn-warning btn-sm">詳細</button>
+          <button type = "button" class = "btn btn-secondary btn-sm">詳細</button>
+        <% end %>
+        <!----- もしログインユーザーなら削除機能表示 ----->
+        <% if target.user == current_user %>
+          <%= link_to target_path(target), method: :delete, data: { confirm: '削除しますか？' } do %>
+            <button type = "button" class = "btn btn-warning btn-sm" >削除</button>
+          <% end %>
         <% end %>
       </div>
     </div>

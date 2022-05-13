@@ -46,7 +46,7 @@
                   <%= link_to "TARGETS", targets_path, class: "nav-link rounded" %>
                 </li>
                 <li class = "nav-item">
-                  <a href = "#" class = "nav-link rounded">STUDY START</a>
+                  <%= link_to "STUDY START", start_path, class: "nav-link rounded" %>
                 </li>
                 <li class = "nav-item">
                   <%= link_to "LOG-OUT", destroy_user_session_path, method: :delete, class: "nav-link rounded" %>
@@ -69,6 +69,13 @@
     </header>
     <!------------main section------------>
   <main>
+    <!----- サクセスメッセージ表示 ----->
+    <% if flash[:notice] %>
+        <div class="alert alert-success text-align-center" role="alert">
+          <p id = "notice"><%= notice %></p>
+        </div>
+      <% end %>
+
     <%= yield %>
   </main>
 

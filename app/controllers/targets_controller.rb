@@ -36,6 +36,17 @@ class TargetsController < ApplicationController
     end
   end
 
+  def destroy
+    @target = Target.find(params[:id])
+    if @target.destroy
+      redirect_to user_path(@target.user), notice: "投稿は削除されました。"
+    else
+      @targets = Target.all
+      render :index
+    end
+
+  end
+
   private
 
   def target_params

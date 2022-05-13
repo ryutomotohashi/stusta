@@ -13,10 +13,11 @@
   <div class="col-lg-6 mx-auto">
     <p class = "mb-1">自己紹介</p>
     <p class="lead mb-4">
-      これからよろしくお願いいたします。
+      <%= user.introduction %>
     </p>
 
   <div class = "d-grid gap-2 d-sm-flex justify-content-sm-center">
+
   <!------- user follower count ------->
     <div class ="followings-content mx-2">
       <p>フォロー数</p>
@@ -40,10 +41,10 @@
         <% end %>
       <% else %>
         <%= link_to edit_user_path(user) do %>
-          <button type = "button" class = "btn btn-secondary btn-lg">編集</button>
+          <button type = "button" class = "btn btn-secondary">編集</button>
         <% end %>
         <%= link_to new_target_path do %>
-          <button type = "button" class = "btn btn-warning btn-lg">投稿</button>
+          <button type = "button" class = "btn btn-warning">投稿</button>
         <% end %>
       <% end %>
     </div>

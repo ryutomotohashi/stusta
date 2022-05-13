@@ -1,0 +1,75 @@
+<div class = "my-3 p-3 d-flex justfiy-content-center ">
+  <div class = "col-4 py-3 bg-body rounded shadow-sm ">
+    <h1 class = "text-bold text-center">Study Start</h1>
+    <hr />
+
+    <!----- time select section ----->
+    <div class = "time-select text-center">
+      <h4 class = "text-bold">Time Select</h4>
+
+      <button type = "button" class = "btn btn-secondary" date-time = "3600">60min</button>
+      <button type = "button" class = "btn btn-secondary" date-time = "1800">30min</button>
+      <button type = "button" class = "btn btn-secondary" date-time = "900">15min</button>
+    </div>
+
+    <hr />
+
+    <!----- sound select section ----->
+    <div class = "sound-select text-center">
+      <h4 class = "text-bold">Sound Select</h4>
+
+      <!-- cafe-btn-->
+      <button type = "button" class = "btn btn-warning">
+        <%= audio_tag "cafe.mp3", id: "sound-date" %>
+        <i class="bi bi-cup"></i><br />
+        <h4>Cafe</h4>
+      </button>
+
+      <!-- rain-btn -->
+      <button type = "button" class = "btn btn-warning">
+        <%= audio_tag "rain.mp3", id: "sound-date" %>
+        <i class="bi bi-cloud-rain-heavy"></i><br />
+        <h4>Rain</h4>
+      </button>
+
+      <!-- wave-btn -->
+      <button type = "button" class = "btn btn-warning">
+        <%= audio_tag "wave.mp3", id: "sound-date" %>
+        <i class="bi bi-droplet-half"></i><br />
+        <h4>Wave</h4>
+      </button>
+
+      <!-- woods-btn -->
+      <button type = "button" class = "btn btn-warning">
+        <%= audio_tag "bird.mp3", id: "sound-date" %>
+        <i class="bi bi-tree"></i><br />
+        <h4>Woods</h4>
+      </button>
+
+    </div>
+  </div>
+
+  <!----- player content section ----->
+  <div class = "col-7 mx-4 py-4 text-center bg-body rounded shadow-sm" id "player-container">
+
+    <!-- 再生ボタン -->
+    <button type = "button" class = "btn btn-lg btn-warning">
+      <i class="bi bi-caret-right-fill"></i>
+    </button>
+
+    <!-- 停止ボタン -->
+    <button type = "button" class = "btn btn-lg btn-warning">
+      <i class="bi bi-pause-fill"></i>
+    </button>
+
+    <!-- 再生の目視的デュレーション -->
+    <p class = "track-inline mx-2" style = "background-color: #000080;">&nbsp;&nbsp;</p>
+    <p class = "track-outline mx-2" style = "background-color: #008800;">&nbsp;&nbsp;</p>
+
+    <!-- player count -->
+    <h2 class = "text-bold">00:00</h2>
+
+    <h1 class = "text-bold">2022/05/13(wh) 00:00:00:00</h1>
+
+  </div>
+</div>
