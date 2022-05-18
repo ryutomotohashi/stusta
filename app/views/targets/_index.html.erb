@@ -14,7 +14,7 @@
 
         コメント<%= target.target_comments.count %>件
 
-        <%= render "favorites/btn", target: target %>
+        いいね<%= target.favorites.count %>
 
         <%= link_to target_path(target) do %>
           <button type = "button" class = "btn btn-secondary btn-sm">詳細</button>

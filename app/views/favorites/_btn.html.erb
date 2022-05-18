@@ -1,11 +1,11 @@
 <% if target.favorited_by?(current_user) %>
   <%= link_to target_favorites_path(target), method: :delete, remote: true, class: "text-decoration-none" do %>
-    <i class="bi bi-heart-fill"></i>
+    <i class="bi bi-heart-fill" aria-hidden = "true"></i>
     <%= target.favorites.count %>
   <% end %>
 <% else %>
   <%= link_to target_favorites_path(target), method: :post, remote: true, class: "text-decoration-none" do %>
-    <i class="bi bi-heart"></i>
+    <i class="bi bi-heart" aria-hidden = "true"></i>
     <%= target.favorites.count %>
   <% end %>
 <% end %>

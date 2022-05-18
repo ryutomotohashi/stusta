@@ -2,9 +2,82 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+body {
+   background-color: #D7EEFF!important;
+ }
+
+
+/* mainのポジション調整 */
+ main {
+  padding-top: 80px;
+}
+
+
+/* header section */
+.navbar {
+  background-color: #20B2AA!important;
+}
+
+.navbar-brand {
+  color: #FFFACD!important;
+}
+
+.nav-link {
+  margin-left: 20px;
+  font-size: 25px;
+  color: #FFFACD!important;
+  transition: 0.5s;
+}
+
+.nav-link:hover {
+  background-color: #FFFACD;
+  color: #20B2AA!important;
+  transition: 0.5s;
+}
+
+.navbar-toggler {
+  color: #FFFACD!important;
+}
+
+/* footer section */
+
+footer {
+  width: 100%;
+  height: 150px;
+  background-color: #336699;
+  text-align: center;
+}
+
+.footer-title,
+.footer-text {
+  color: #FFFACD;
+  line-height: 50px;
+}
 
 .main-visual {
   padding-top: 15%;
   height: 600px;
   background-image: url(undraw_Audio_conversation_re_ptsl.png);
+}
+
+// start page
+// player content section
+
+.player-container {
+  padding-top: 150px;
+  position: relative;
+
+  .back-ground {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  #time-display {
+    font-size: 50px;
+    background-color: rgba(50,50,50,0.6);
+  }
 }

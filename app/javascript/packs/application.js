@@ -11,9 +11,9 @@ import "channels"
 import "bootstrap";
 import "../stylesheets/application";
 
-import "jquery"
+import "jquery";
+import "start";
 
-import "start.js"
 
 Rails.start()
 Turbolinks.start()

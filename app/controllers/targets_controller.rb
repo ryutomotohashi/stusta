@@ -1,6 +1,6 @@
 class TargetsController < ApplicationController
   before_action :authenticate_user!
-  before_action :ensure_correct_user, only: [:edit, :update,]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def new
     @target = Target.new
@@ -37,7 +37,6 @@ class TargetsController < ApplicationController
   end
 
   def destroy
-    @target = Target.find(params[:id])
     if @target.destroy
       redirect_to user_path(@target.user), notice: "投稿は削除されました。"
     else
